@@ -20,25 +20,26 @@ var addDot = function(e){
 	c.setAttribute("y2", mousey);
 	c.setAttribute("style", "stroke: #000000;stroke-width:2");
 	document.getElementById("svgImage").appendChild(c);
-	addCircle(e);
+	addCircle(mousex.toString(), mousey.toString(), "20");
     }
     else{
-	addCircle(e);
+	addCircle(mousex.toString(), mousey.toString(), "20");
     }
 }
 
-var addCircle = function(e){
+var addCircle = function(x,y,r){
     var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     
-    c.setAttribute("cx", mousex.toString());
+    c.setAttribute("cx", x);
     
-    c.setAttribute("cy", mousey.toString());
+    c.setAttribute("cy", y);
     
-    c.setAttribute("r", "20");
+    c.setAttribute("r", r);
     
     c.setAttribute("fill", "black");
-    
-    document.getElementById("svgImage").appendChild(c);
+
+    return c;
+//    document.getElementById("svgImage").appendChild(c);
 }
 
 
